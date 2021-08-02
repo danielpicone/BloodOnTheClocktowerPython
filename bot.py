@@ -37,6 +37,13 @@ async def on_ready():
     await bot.change_presence(activity = game)
 
     text_channel = get_text_channel(GUILD, NOTIFICATION_CHANNEL)
+
+    previous_messages = await text_channel.history(limit=100).flatten()
+
+    previous_messages = [m for m in previous_messages if m.author == bot.user]
+
+    await text_channel.delete_messages(previous_messages)
+
     message = await text_channel.send(
         embed = discord.Embed(title = "Blood on the Clocktower commands",
                               description = "Click the emojis to move players between voice channels\n" + \
