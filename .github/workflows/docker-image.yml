@@ -20,8 +20,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Push the Docker container
+    - name: Push the Docker image
       run: |
         docker login ghcr.io -u USERNAME -p $GITHUB_TOKEN
         docker build . --file Dockerfile --tag discord-bot:$GITHUB_REF
