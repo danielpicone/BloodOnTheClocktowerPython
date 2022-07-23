@@ -23,5 +23,5 @@ jobs:
     - name: Push the Docker image
       run: |
         docker login ghcr.io -u danielpicone -p ${{ secrets.GITHUB_TOKEN }}
-        #docker build . --file Dockerfile --tag discord-bot:${{ secrets.GITHUB_REF }}
+        docker build . --file Dockerfile --tag discord-bot:${{ secrets.GITHUB_REF }}
         #docker push ghcr.io/danielpicone/bloodontheclocktowerpython:latest
