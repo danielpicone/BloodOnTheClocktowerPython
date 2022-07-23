@@ -23,6 +23,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: Push the Docker image
       run: |
-        docker build . --file Dockerfile --tag ghcr.io/danielpicone/bloodontheclocktowerpython
-        docker login ghcr.io -u danielpicone -p ${{ secrets.GITHUB_TOKEN }}
-        docker push ghcr.io/danielpicone/bloodontheclocktowerpython:latest
+        sudo docker build . --file Dockerfile --tag ghcr.io/danielpicone/bloodontheclocktowerpython
+        sudo docker login ghcr.io -u danielpicone -p ${{ secrets.GITHUB_TOKEN }}
+        sudo docker push ghcr.io/danielpicone/bloodontheclocktowerpython:latest
