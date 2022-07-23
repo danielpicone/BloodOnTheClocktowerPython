@@ -22,6 +22,6 @@ jobs:
     steps:
     - name: Push the Docker image
       run: |
-        docker login ghcr.io -u danielpicone -p ${{ secrets.GITHUB_TOKEN }}
+        #docker login ghcr.io -u danielpicone -p ${{ secrets.GITHUB_TOKEN }}
         docker build . --file Dockerfile --tag discord-bot:$(date +%s)
         #docker push ghcr.io/danielpicone/bloodontheclocktowerpython:latest
