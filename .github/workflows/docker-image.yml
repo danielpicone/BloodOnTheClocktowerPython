@@ -25,4 +25,4 @@ jobs:
       run: |
         docker build . --file Dockerfile --tag ghcr.io/danielpicone/bloodontheclocktowerpython
         docker login ghcr.io -u danielpicone -p ${{ secrets.GITHUB_TOKEN }}
-        docker push ghcr.io/danielpicone/bloodontheclocktowerpython:latest
+        docker push ghcr.io/danielpicone/bloodontheclocktowerpython2:latest
