@@ -20,8 +20,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - name: Push the Docker image
       run: |
-        #docker login ghcr.io -u danielpicone -p ${{ secrets.GITHUB_TOKEN }}
         docker build . --file Dockerfile --tag discord-bot:$(date +%s)
+        docker login ghcr.io -u danielpicone -p ${{ secrets.GITHUB_TOKEN }}
         #docker push ghcr.io/danielpicone/bloodontheclocktowerpython:latest
